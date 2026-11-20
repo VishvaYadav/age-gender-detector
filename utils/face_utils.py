@@ -12,7 +12,10 @@ Quick use:
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
+
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")   # hide TensorFlow's start-up info messages
 
 import cv2
 import numpy as np

@@ -18,11 +18,13 @@ Training notebook: [`notebooks/01_base_model_training.ipynb`](notebooks/01_base_
 | 3 | Nationality detection | [`tasks/task3_nationality`](tasks/task3_nationality) | ⏳ |
 | 4 | Long hair identification | [`tasks/task4_long_hair`](tasks/task4_long_hair) | ⏳ |
 | 5 | Age & emotion from voice | [`tasks/task5_voice_age`](tasks/task5_voice_age) | ⏳ |
-| 6 | Senior citizen identification | [`tasks/task6_senior_citizen`](tasks/task6_senior_citizen) | ⏳ |
+| 6 | Senior citizen identification | [`tasks/task6_senior_citizen`](tasks/task6_senior_citizen) | ✅ |
 
 ## Project structure
 ```
 age-gender-detector/
+├── app.py            # Streamlit app: one page per task (streamlit run app.py)
+├── app_pages/        # the app's pages
 ├── notebooks/        # training notebooks (run on Kaggle)
 ├── models/           # trained model files
 ├── utils/            # shared code: face detection + base-model prediction
@@ -39,7 +41,13 @@ cd age-gender-detector
 pip install -r requirements.txt
 ```
 
-Test the face pipeline on any photo:
+Run the app:
+```bash
+streamlit run app.py
+```
+It opens in your browser, with a page for the base model and one for each task.
+
+Test the face pipeline on a single photo from the command line:
 ```bash
 python -m utils.demo path/to/photo.jpg
 ```
